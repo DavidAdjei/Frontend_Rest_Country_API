@@ -1,0 +1,37 @@
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+    height: 93vh;
+    gap: 5rem;
+}
+
+.details_section{
+    display: flex;
+    width: 100%;
+    height: 90vh;
+    gap: 7%;
+}
+
+.back_button{
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    gap: 1rem;
+    width: 6rem;
+    padding: .5rem;
+    box-shadow: 1px 2px 3px 0px hsl(0, 0%, 52%);
+    border-radius: .5rem;
+    font-weight: 600;
+    cursor: pointer;
+}
+
+.back_button:hover{
+    box-shadow: 1px 1px 1px 1px hsl(0, 0%, 52%);
+    color: black;
+}
+
+.back_button p {
+    display: flex;
+    gap: 1rem;
+}

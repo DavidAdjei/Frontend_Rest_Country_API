@@ -1,0 +1,46 @@
+.details__right-div{
+    width: 50%;
+    height: 50%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+}
+
+.country__info{
+    display: flex;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.country__info p{
+    padding-bottom: .3rem;
+}
+
+
+.countrySpecs{
+    font-weight: 600;
+}
+
+.country__borders{
+    display: flex;
+    gap: 1.5rem;
+
+}
+
+.borderNations{
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+}
+
+.borderButton{
+    box-shadow: 1px 2px 3px 0px hsl(0, 0%, 52%);
+    padding: .9rem;
+    cursor: pointer;
+    border-radius: .3rem;
+}
+
+.borderButton:hover{
+    box-shadow: 1px 1px 1px 1px hsl(0, 0%, 52%);
+    color: black;
+}
