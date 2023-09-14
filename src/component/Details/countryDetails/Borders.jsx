@@ -1,15 +1,17 @@
-import React, { useState } from 'react';
+import React from 'react';
 import './details.css';
-import { useParams, useLocation, useNavigate } from 'react-router-dom';
+import { useParams, useNavigate, useLocation } from 'react-router-dom';
+import { connect } from 'react-redux';
+import { setSelectedCountry } from '../../../reducer/countriesReducer';
 
 const getCountryName = (alpha3code, countries) => {
+  if (!Array.isArray(countries)) {
+    return alpha3code; 
+  }
   const country = countries.find((countryWanted) => countryWanted.alpha3Code === alpha3code);
-
   if (!country) {
     return alpha3code;
-  }
-
-  if (country.name && country.name.length > 12) {
+  } else if (country.name && country.name.length > 12) {
     return alpha3code;
   } else {
     return country.name;
@@ -17,37 +19,26 @@ const getCountryName = (alpha3code, countries) => {
 };
 
 const findCountryByAlpha2Code = (alpha2code, countries) => {
-    for(var i=0; i<countries.length; i++){
-        if(countries[i].alpha2Code === alpha2code){
-            return countries[i];
-        }
-    };
+  const country = countries.find((country) => country.alpha2Code === alpha2code);
+  if (country) {
+    return country;
+  }
 };
-
-
 
 const hasBorders = (country) => {
   return country && country.borders && country.borders.length > 0;
 };
 
-export const Border = ({ country, countries }) => {
-  const [selectedCountry, setSelectedCountry] = useState(null);
+export const Border = ({ country, countries}) => {
   const navigate = useNavigate();
+   let { state } = useLocation();
   const { alpha2Code } = useParams();
-  const location = useLocation();
 
   const handleCountryClick = (selectedAlpha2Code) => {
-  console.log("Selected Alpha2Code:", selectedAlpha2Code);
-
-  const selectedCountry = findCountryByAlpha2Code(selectedAlpha2Code, countries);
-  
-  console.log("Selected Country:", selectedCountry);
-
-  if (selectedCountry) {
+    const selectedCountry = findCountryByAlpha2Code(selectedAlpha2Code, countries);
     setSelectedCountry(selectedCountry);
-    navigate(`/:${selectedAlpha2Code}`);
-  }
-};
+    navigate(`/:${selectedAlpha2Code}`, { replace: true }, { state: selectedCountry });
+  };
 
   if (!country || !hasBorders(country)) {
     return null;
@@ -57,16 +48,28 @@ export const Border = ({ country, countries }) => {
     <div>
       <p className="borderNations">
         <span className="countrySpecs">Border Nations: </span>
-        <div className="country__borders">
+        <span className="country__borders">
           {country.borders.map((border) => (
-            <p className='borderButton'
+            <p
+              className='borderButton'
               key={border}
-              onClick={() => handleCountryClick({ alpha2Code: border })}>
+              onClick={() => handleCountryClick(border)}>
               {getCountryName(border, countries)}
             </p>
           ))}
-        </div>
+        </span>
       </p>
     </div>
   );
 };
+
+const mapStateToProps = (state) => ({
+  countries: state.countries.countries,
+  selectedCountry: state.countries.selectedCountry,
+});
+
+const mapDispatchToProps = {
+  setSelectedCountry,
+};
+
+export default connect(mapStateToProps, mapDispatchToProps)(Border);
