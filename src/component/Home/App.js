@@ -5,7 +5,7 @@ import { Provider } from 'react-redux';
 import { useNavigate } from 'react-router-dom';
 import { useTheme } from '../themes/theme';
 import { store } from '../../reducer/store';
-import { setCountries, setSearchField, setSelectedRegion, setSelectedCountry, toggleTheme } from '../../reducer/countriesReducer'; // Import the action creators
+import { setCountries, setSearchField, setSelectedRegion, setSelectedCountry, toggleTheme } from '../../reducer/countriesReducer';
 import { NavBar } from './../features/navBar/navBar';
 import { Card } from './../features/Card/card';
 import  Container  from '../Details/countryContainer/container';
