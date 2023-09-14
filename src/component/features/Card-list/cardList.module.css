@@ -12,6 +12,7 @@
     width: calc(100vw - 84.5%);
     height: 24rem;
     box-shadow: 1px 2px 3px 0px hsl(0, 0%, 52%);
+    cursor: pointer;
 }
 
 .images{

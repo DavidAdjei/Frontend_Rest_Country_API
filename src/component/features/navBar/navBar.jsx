@@ -16,8 +16,8 @@ export const NavBar = ({ toggleTheme }) => {
           <h2>
               Where in the world?
           </h2>
-        <div className='toggleTheme' onClick={toggleTheme}>
-          <button style={{ color: contextTheme.text }}>
+        <div className='toggleTheme' >
+          <button onClick={toggleTheme} style={{ color: contextTheme.text }}>
             {theme === 'light' ?
                 <BsMoon className="nav__switch__icon" />
                 : <BsMoonFill className="nav__switch__icon" />

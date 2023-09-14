@@ -21,7 +21,7 @@
     width: 6rem;
     padding: .5rem;
     box-shadow: 1px 2px 3px 0px hsl(0, 0%, 52%);
-    border-radius: .5rem;
+    border-radius: .2rem;
     font-weight: 600;
     cursor: pointer;
 }
@@ -34,4 +34,5 @@
 .back_button p {
     display: flex;
     gap: 1rem;
+    align-items: center;
 }

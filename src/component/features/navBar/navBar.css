@@ -12,9 +12,10 @@ button{
     font-weight: 600;
     font-size: 1.2rem;
     display: flex;
-    justify-content: center;
     align-items: center;
-    gap: .3rem;
+    gap: .5rem;
+    height: 100%;
+    width: 100%;
 }
 
 button:hover{
@@ -24,7 +25,7 @@ button:hover{
 .toggleTheme{
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-end;
     height: 100%;
     /* padding-inline: 1rem; */
     

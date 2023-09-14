@@ -77,7 +77,7 @@ const App = () => {
               selectedCountry={selectedCountry}
               onBackClick={handleBackClick}
               onCountryClick={handleCountryClick}
-              countries = {countries}
+              countries={countries}
             />}
           />
         </Routes>
