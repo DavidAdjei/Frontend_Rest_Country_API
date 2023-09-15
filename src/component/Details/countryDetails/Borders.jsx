@@ -1,6 +1,5 @@
 import React from 'react';
 import './details.css';
-import { useParams, useNavigate, useLocation } from 'react-router-dom';
 import { connect } from 'react-redux';
 import { setSelectedCountry } from '../../../reducer/countriesReducer';
 
@@ -19,7 +18,7 @@ const getCountryName = (alpha3code, countries) => {
 };
 
 const findCountryByAlpha2Code = (alpha2code, countries) => {
-  const country = countries.find((country) => country.alpha2Code === alpha2code);
+  const country = countries.find((country) => country.alpha3Code === alpha2code);
   if (country) {
     return country;
   }
@@ -29,36 +28,26 @@ const hasBorders = (country) => {
   return country && country.borders && country.borders.length > 0;
 };
 
-export const Border = ({ country, countries}) => {
-  const navigate = useNavigate();
-   let { state } = useLocation();
-  const { alpha2Code } = useParams();
-
-  const handleCountryClick = (selectedAlpha2Code) => {
-    const selectedCountry = findCountryByAlpha2Code(selectedAlpha2Code, countries);
-    setSelectedCountry(selectedCountry);
-    navigate(`/:${selectedAlpha2Code}`, { replace: true }, { state: selectedCountry });
-  };
-
+export const Border = ({ country, countries, onCountryClick}) => {
   if (!country || !hasBorders(country)) {
     return null;
   }
 
   return (
     <div>
-      <p className="borderNations">
+      <div className="borderNations">
         <span className="countrySpecs">Border Nations: </span>
         <span className="country__borders">
           {country.borders.map((border) => (
             <p
               className='borderButton'
               key={border}
-              onClick={() => handleCountryClick(border)}>
+              onClick={() => onCountryClick(findCountryByAlpha2Code(border, countries))}>
               {getCountryName(border, countries)}
             </p>
           ))}
         </span>
-      </p>
+      </div>
     </div>
   );
 };

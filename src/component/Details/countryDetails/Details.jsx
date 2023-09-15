@@ -3,7 +3,7 @@ import './details.css';
 import { connect } from 'react-redux';
 import { Border } from './Borders';
 
-const Details = ({ selectedCountry, countries, country }) => {
+const Details = ({ selectedCountry, countries, onCountryClick}) => {
   const {
     name,
     nativeName,
@@ -41,6 +41,7 @@ const Details = ({ selectedCountry, countries, country }) => {
       <Border
         countries={countries}
         country={selectedCountry}
+        onCountryClick={onCountryClick}
       />
     </div>
   );

@@ -2,14 +2,15 @@
     display: flex;
     flex-direction: column;
     width: 100%;
-    height: 93vh;
+    min-height: 93vh;
     gap: 5rem;
+    padding-inline: 3.15rem;
 }
 
 .details_section{
     display: flex;
     width: 100%;
-    height: 90vh;
+    min-height: 90vh;
     gap: 7%;
 }
 
@@ -36,3 +37,15 @@
     gap: 1rem;
     align-items: center;
 }
+
+@media screen and (max-width: 50rem) {
+    .container{
+        padding-inline: 2rem;
+    }
+
+    .details_section{
+        flex-direction: column;
+        gap: 2rem;
+    }
+}
+

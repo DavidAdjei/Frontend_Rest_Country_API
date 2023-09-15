@@ -1,9 +1,16 @@
 // FilterBox.js
 import React from 'react';
+import { useTheme } from '../../themes/theme';
 
 export const FilterBox = ({ handleFilterChange }) => {
+  const [theme, setTheme, getTheme] = useTheme();
+  const contextTheme = getTheme();
   return (
-      <select
+    <select
+      style={{
+        background: contextTheme.elements,
+        color: contextTheme.text
+      }}
       className='filter'
       placeholder='Filter'
       name="Region"

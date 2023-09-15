@@ -1,6 +1,6 @@
 .details__right-div{
     width: 50%;
-    height: 50%;
+    height: 60%;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
@@ -24,6 +24,7 @@
 .country__borders{
     display: flex;
     gap: 1.5rem;
+    flex-wrap: wrap;
 
 }
 
@@ -35,12 +36,38 @@
 
 .borderButton{
     box-shadow: 1px 2px 3px 0px hsl(0, 0%, 52%);
-    padding: .9rem;
+    padding-inline: 1rem;
+    padding-block: .5rem;
     cursor: pointer;
     border-radius: .2rem;
+    font-size: 12px;
 }
 
 .borderButton:hover{
     box-shadow: 1px 1px 1px 1px hsl(0, 0%, 52%);
     color: black;
+}
+
+@media screen and (max-width: 80rem) {
+    .details__right-div{
+       
+    }
+    
+}
+
+@media screen and (max-width: 50rem) {
+    .details__right-div{
+        width: 100%;
+        height: auto;
+        gap: 2rem;
+    }
+    .country__info{
+        flex-direction: column;
+    }
+    .borderNations{
+        flex-direction: column;
+        align-items: flex-start;
+        padding-bottom: 2rem;
+        gap: 1rem;
+    }
 }

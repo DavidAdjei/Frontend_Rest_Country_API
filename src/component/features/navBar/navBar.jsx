@@ -4,13 +4,12 @@ import { BsMoonFill, BsMoon } from "react-icons/bs";
 import { useTheme } from '../../themes/theme';
 
 export const NavBar = ({ toggleTheme }) => {
-  // eslint-disable-next-line
   const [theme, setTheme, getTheme] = useTheme();
   const contextTheme = getTheme();
 
     return (
         <div className='nav'style={{
-          background: contextTheme.foreground,
+          background: contextTheme.elements,
           color: contextTheme.text
         }}>
           <h2>
@@ -22,7 +21,7 @@ export const NavBar = ({ toggleTheme }) => {
                 <BsMoon className="nav__switch__icon" />
                 : <BsMoonFill className="nav__switch__icon" />
             }
-            {theme === 'lightTheme' ? 'Dark Mode' : 'Light Mode'}
+            {theme === 'lightTheme' ? 'Light Mode' : 'Dark Mode'}
           </button>
         </div>
             

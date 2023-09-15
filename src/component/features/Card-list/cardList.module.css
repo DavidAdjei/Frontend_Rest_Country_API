@@ -9,7 +9,7 @@
 .cardList{
     display: flex;
     flex-direction: column;
-    width: calc(100vw - 84.5%);
+    width: calc((100vw/3) - 16.2rem);
     height: 24rem;
     box-shadow: 1px 2px 3px 0px hsl(0, 0%, 52%);
     cursor: pointer;
@@ -42,4 +42,40 @@
 
 .countrySpecs{
     font-weight: 600;
+}
+
+@media screen and (max-width: 80rem) {
+    .cardList{
+        width: calc((100vw/3) - 4.8rem);
+    }
+}
+
+@media screen and (max-width: 60rem) {
+    .cardList{
+        width: calc((100vw/3) + 4rem);
+    }
+}
+
+@media screen and (max-width: 55rem) {
+    .cardList{
+        width: calc((100vw/3) + 2rem);
+    }
+}
+
+@media screen and (max-width: 42.9rem) {
+    .cardList{
+        width: calc((100vw/3) + 1rem);
+    }
+}
+
+@media screen and (max-width: 46.9rem) {
+    .cardList{
+        width: calc((100vw/3) + .1rem);
+    }
+}
+
+@media screen and (max-width: 35rem) {
+    .cardList{
+        width: 87%;
+    }
 }

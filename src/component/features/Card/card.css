@@ -9,6 +9,7 @@
     min-height: 93vh;
     flex-direction: column;
     gap: 2rem;
+    padding-inline: 3.15rem;
 }
 
 .countries{
@@ -17,4 +18,15 @@
     gap: 4rem;
     min-height: 89vh;
     width: 100%;
+}
+
+@media screen and (max-width: 40rem) {
+    .card{
+        padding-inline: 1rem;
+    }
+
+    .countries{
+        justify-content: center;
+        align-items: center;
+    }
 }

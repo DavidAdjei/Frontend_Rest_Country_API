@@ -4,6 +4,7 @@
     align-items: center;
     height: 7vh;
     width: 100%;
+    padding-inline: 3.15rem;
 }
 
 button{
@@ -33,4 +34,17 @@ button:hover{
 
 .toggleTheme:hover{
     cursor: pointer;
+}
+
+@media screen and (max-width: 40rem) {
+    .nav{
+        padding-inline: 1rem;
+    }
+    .nav h2{
+        font-size: 1rem;
+    }
+
+    button{
+        font-size: 1rem;
+    }
 }
