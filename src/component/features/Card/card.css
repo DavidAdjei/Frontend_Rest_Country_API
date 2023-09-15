@@ -6,17 +6,18 @@
 .card{
     display: flex;
     width: 100%;
-    min-height: 93vh;
+    min-height: 91vh;
     flex-direction: column;
     gap: 2rem;
     padding-inline: 3.15rem;
+    padding-top: 2vh;
 }
 
 .countries{
     display: flex;
     flex-wrap: wrap;
     gap: 4rem;
-    min-height: 89vh;
+    min-height: 87vh;
     width: 100%;
 }
 

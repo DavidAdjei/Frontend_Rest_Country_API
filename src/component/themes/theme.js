@@ -2,7 +2,7 @@ import React, { useContext, useState, createContext } from 'react';
 const ThemeContext = createContext();
 
 export const ThemeProvider = (props) => {
-    const [theme, setTheme] = useState('darkTheme');
+    const [theme, setTheme] = useState('lightTheme');
     const appTheme = {
         lightTheme: {
             text: 'hsl(200, 15%, 8%)',
@@ -17,7 +17,7 @@ export const ThemeProvider = (props) => {
         }
     };
 
-    const getTheme = () => theme === 'lightTheme' ? appTheme.lightTheme : appTheme.darkTheme;
+    const getTheme = () => theme === 'darkTheme' ? appTheme.darkTheme : appTheme.lightTheme ;
 
     return (
         <div style={{ background: getTheme().background }}>
