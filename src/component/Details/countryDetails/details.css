@@ -1,6 +1,6 @@
 .details__right-div{
     width: 50%;
-    height: 60%;
+    height: 50vh;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
