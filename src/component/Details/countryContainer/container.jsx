@@ -1,6 +1,6 @@
 import React from 'react';
 import { connect } from 'react-redux'; // Import connect
-import { Flag } from '../countryFlag/flag';
+import  Flag  from '../countryFlag/flag';
 import  Details   from '../countryDetails/Details';
 import { BsArrowLeft } from 'react-icons/bs';
 import './container.css';
@@ -16,7 +16,7 @@ const Container = ({ onBackClick, selectedCountry, onCountryClick, countries }) 
         </div>
       </div>
       <div className='details_section'>
-        <Flag country={selectedCountry} onBackClick={onBackClick} />
+        <Flag onBackClick={onBackClick} />
         <Details
           country={selectedCountry}
           onCountryClick={onCountryClick}

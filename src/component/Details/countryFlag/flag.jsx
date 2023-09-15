@@ -1,14 +1,21 @@
 import React from 'react';
-import './flag.css'
+import './flag.css';
+import { connect } from 'react-redux';
 
-export const Flag = ({ country }) => {
+const Flag = ({ selectedCountry }) => {
   return (
     <div className='details__left-div'>
       <img
-        src={country.flags && country.flags.png}
-        alt={`${country.name} Flag`}
+        src={selectedCountry.flags && selectedCountry.flags.png}
+        alt={`${selectedCountry.name} Flag`}
         className='image'
       />
     </div>
   );
 };
+
+const mapStateToProps = (state) => ({
+  selectedCountry: state.countries.selectedCountry, 
+});
+
+export default connect(mapStateToProps)(Flag);
